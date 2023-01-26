@@ -1,5 +1,5 @@
-const BlogPostsSchema = (sequelize, DataTypes) => {
-    const BlogPostsTable = sequelize.define('BlogPosts', {
+const BlogPostSchema = (sequelize, DataTypes) => {
+    const BlogPostTable = sequelize.define('BlogPost', {
         title: DataTypes.STRING,
         content: DataTypes.STRING,
         userId: DataTypes.INTEGER,
@@ -11,14 +11,14 @@ const BlogPostsSchema = (sequelize, DataTypes) => {
             underscored: true,
         });
 
-    BlogPostsTable.associate = (models) => {
-        BlogPostsTable.belongsTo(models.Users), {
+    BlogPostTable.associate = (models) => {
+        BlogPostTable.belongsTo(models.User), {
             as: 'users',
             foreignKey: 'user_id'
         };
     };
 
-    return UsersTable; 
+    return BlogPostTable; 
 };
 
-module.exports = UsersSchema;
+module.exports = BlogPostSchema;
