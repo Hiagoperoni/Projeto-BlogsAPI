@@ -7,6 +7,12 @@ const createUser = async (displayName, email, password, image) => {
     return { token };
 };
 
+const getAllUsers = async () => {
+    const allUsers = User.findAll({ attributes: ['id', 'displayName', 'email', 'image'] });
+    return allUsers;
+};
+
 module.exports = {
     createUser,
+    getAllUsers,
 };

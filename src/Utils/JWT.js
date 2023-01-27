@@ -14,7 +14,7 @@ const verifyToken = async (token) => {
         const openToken = await jwt.verify(token, TOKEN_SECRET);
         return openToken;
     } catch (err) {
-        const error = new Error('Token not found');
+        const error = new Error('Expired or invalid token');
         error.status = 401;
         throw error;
     }

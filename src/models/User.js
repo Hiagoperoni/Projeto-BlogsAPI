@@ -4,7 +4,6 @@ const UserSchema = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        name: DataTypes.STRING,
         displayName: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
