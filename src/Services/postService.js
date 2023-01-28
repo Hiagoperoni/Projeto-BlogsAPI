@@ -22,8 +22,7 @@ const newBlogPost = async (email, title, content) => {
     const published = dateNow;
     const updated = dateNow;
     const newPost = await BlogPost.create({ title, content, userId, published, updated });
-    const { id } = newPost.dataValues;
-    console.log(newPost);
+    const id = newPost.null;
     const postObj = {
         id,
         title,
