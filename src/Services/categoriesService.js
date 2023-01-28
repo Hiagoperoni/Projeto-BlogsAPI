@@ -7,6 +7,12 @@ const newCategory = async (name) => {
     return insertId;
 };
 
+const getAllCategories = async () => {
+    const allCategories = Category.findAll({ attributes: ['id', 'name'] });
+    return allCategories;
+};
+
 module.exports = {
     newCategory,
+    getAllCategories,
 };

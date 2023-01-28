@@ -12,4 +12,10 @@ categoryRouter.post(
     categoryCont.newCategory,
 );
 
+categoryRouter.get(
+    '/',
+    authToken,
+    categoryCont.getAllCategories,
+);
+
 module.exports = categoryRouter;
